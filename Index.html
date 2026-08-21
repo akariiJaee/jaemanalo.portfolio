@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jeszemuel Manalo (Jae) — Strategic Video Editor, Graphic Designer & UI/UX Designer</title>
+<meta name="description" content="Jae is a strategic video editor, graphic designer, and UI/UX designer based in the Philippines, helping CEOs, entrepreneurs, and creators produce visuals that communicate, convert, and leave lasting impressions." />
+<meta name="author" content="Jeszemuel Manalo" />
+<meta name="keywords" content="video editor, graphic designer, UI/UX designer, social media manager, encoder, Philippines, portfolio, Jae" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://your-username.github.io/your-repository-name/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Jeszemuel Manalo (Jae) — Strategic Video Editor & Designer" />
+<meta property="og:description" content="Visuals that communicate, convert, and leave lasting impressions — strategic video editing, graphic design, and UI/UX design." />
+<meta property="og:image" content="assets/images/og-image.jpg" />
+<meta property="og:url" content="https://your-username.github.io/your-repository-name/" />
+<meta property="og:site_name" content="Jae — Portfolio" />
+<meta property="og:locale" content="en_PH" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Jeszemuel Manalo (Jae) — Strategic Video Editor & Designer" />
+<meta name="twitter:description" content="Visuals that communicate, convert, and leave lasting impressions." />
+<meta name="twitter:image" content="assets/images/og-image.jpg" />
+
+<!-- Theme -->
+<meta name="theme-color" content="#08080a" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NOISE / GRAIN OVERLAY ============ -->
+<div class="grain"></div>
+
+<!-- ============ CUSTOM CURSOR REC DOT ============ -->
+<div class="rec-cursor" id="recCursor"><span class="rec-dot"></span><span class="rec-label">REC</span></div>
+
+<!-- ============ TOP TIMECODE BAR ============ -->
+<div class="timecode-bar">
+  <div class="timecode-left">
+    <span class="tc-badge">● LIVE</span>
+    <span class="tc-text" id="phTime">--:--:-- </span>
+    <span class="tc-zone">GMT+8 · Philippines</span>
+  </div>
+  <div class="timecode-right">
+    <span class="tc-text">JAE_PORTFOLIO.PROJ</span>
+  </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <span class="logo-mark">JM</span>
+      <span class="logo-text">Jae<span class="logo-dot">.</span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
+      <li><a href="#about" class="nav-link" data-nav>About</a></li>
+      <li><a href="#services" class="nav-link" data-nav>Services</a></li>
+      <li><a href="#portfolio" class="nav-link" data-nav>Portfolio</a></li>
+      <li><a href="#skills" class="nav-link" data-nav>Skills</a></li>
+      <li><a href="#testimonials" class="nav-link" data-nav>Testimonials</a></li>
+      <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#home" data-nav-mobile>Home</a></li>
+    <li><a href="#about" data-nav-mobile>About</a></li>
+    <li><a href="#services" data-nav-mobile>Services</a></li>
+    <li><a href="#portfolio" data-nav-mobile>Portfolio</a></li>
+    <li><a href="#skills" data-nav-mobile>Skills</a></li>
+    <li><a href="#testimonials" data-nav-mobile>Testimonials</a></li>
+    <li><a href="#contact" data-nav-mobile>Contact</a></li>
+  </ul>
+</div>
+
+<!-- ============ HERO SECTION ============ -->
+<header class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-container">
+    <div class="hero-text reveal">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-tick"></span>
+        Based in the Philippines · GMT+8
+      </div>
+
+      <h1 class="hero-name">
+        Jeszemuel<br><span class="hero-name-outline">Manalo</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="role-prefix">I am a</span>
+        <span class="role-rotator" id="roleRotator"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-intro">
+        I help businesses, CEOs, entrepreneurs, and creators create visuals that
+        communicate, convert, and leave lasting impressions.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary ripple" download>
+          <span>Download CV</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 12v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost ripple">
+          <span>Contact Me</span>
+        </a>
+      </div>
+
+      <button class="scroll-down" id="scrollDown" aria-label="Scroll down">
+        <span class="scroll-line"></span>
+        Scroll
+      </button>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="frame-card">
+        <div class="frame-topbar">
+          <span></span><span></span><span></span>
+          <span class="frame-name">jae_profile.mp4</span>
+        </div>
+        <div class="profile-frame">
+          <img src="frontend/images/pfpp.jpg" alt="Jeszemuel Manalo, Jae" class="profile-img" width="800" height="900" loading="eager">
+          <div class="rec-tag">● REC 00:00:12</div>
+        </div>
+        <div class="frame-scrub">
+          <div class="scrub-tick" style="left:8%"></div>
+          <div class="scrub-tick" style="left:24%"></div>
+          <div class="scrub-tick" style="left:40%"></div>
+          <div class="scrub-tick" style="left:56%"></div>
+          <div class="scrub-tick" style="left:72%"></div>
+          <div class="scrub-tick" style="left:88%"></div>
+          <div class="scrub-playhead" id="scrubPlayhead"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ABOUT SECTION ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 01 — About</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>
+          I am a <strong>Strategic Video Editor</strong> and <strong>Graphic Designer</strong> dedicated to
+          helping CEOs, entrepreneurs, businesses, and content creators transform their ideas into
+          compelling visual experiences.
+        </p>
+        <p>
+          With a strong focus on strategy-driven content, I don't just edit videos or design graphics —
+          I craft engaging digital assets that capture attention, communicate value, and strengthen
+          brand presence.
+        </p>
+        <p>
+          My goal is to help clients stand out in competitive digital spaces through clarity, creativity,
+          and purpose.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num" data-count="57">0</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-count="3">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="waveform" id="waveform"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO VIDEO SECTION ============ -->
+<section class="section" id="intro-video">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 02 — Reel</span>
+      <h2 class="section-title">Introduction Video</h2>
+    </div>
+
+    <div class="video-card glass reveal">
+      <div class="video-frame">
+        <video id="introVideo" poster="assets/videos/intro-video-poster.jpg" playsinline preload="metadata">
+          <source src="assets/videos/intro-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button class="play-btn" id="playBtn" aria-label="Play video">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M9 6.5L21 14L9 21.5V6.5Z" fill="currentColor"/></svg>
+        </button>
+        <div class="video-timecode">00:00 / 01:24</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES SECTION ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 03 — Services</span>
+      <h2 class="section-title">What I Do</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card glass reveal">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M18 10l6-3v12l-6-3" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Strategic Video Editing</h3>
+        <p>Story-driven edits engineered to hold attention and drive action across every platform.</p>
+      </div>
+
+      <div class="service-card glass reveal">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.4"/><circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+        <h3>Graphic Design</h3>
+        <p>Clean, purposeful visuals that give brands a distinct and memorable identity.</p>
+      </div>
+
+      <div class="service-card glass reveal">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="3" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M3 9h20" stroke="currentColor" stroke-width="1.4"/><circle cx="7" cy="6" r="0.8" fill="currentColor"/></svg>
+        </div>
+        <h3>UI/UX Design</h3>
+        <p>Interfaces built around clarity, flow, and the way people actually use them.</p>
+      </div>
+
+      <div class="service-card glass reveal">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3v20M3 13h20" stroke="currentColor" stroke-width="1.4"/><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+        <h3>Encoding</h3>
+        <p>Precise, platform-optimized exports that keep quality intact at every resolution.</p>
+      </div>
+
+      <div class="service-card glass reveal">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="6" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 10h20" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+        <h3>Social Media Management</h3>
+        <p>Consistent, on-brand presence that keeps audiences engaged and growing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO EDITING SPECIALIZATION ============ -->
+<section class="section spec-section" id="specialization">
+  <div class="container">
+    <div class="spec-grid">
+      <div class="spec-copy reveal">
+        <span class="section-eyebrow">Frame 04 — Specialization</span>
+        <h2 class="section-title">Video Editing Expertise</h2>
+        <p>
+          I specialize in creating engaging short-form videos, cut for how people actually
+          watch — fast, clear, and built to hold attention from the first frame.
+        </p>
+
+        <div class="spec-tags">
+          <span class="tag">Social Media Ads</span>
+          <span class="tag">Podcast Clips</span>
+          <span class="tag">Promotional Videos</span>
+          <span class="tag">Short-form Content</span>
+          <span class="tag">Reels</span>
+          <span class="tag">TikTok</span>
+          <span class="tag">Instagram Content</span>
+          <span class="tag">YouTube Shorts</span>
+        </div>
+
+        <div class="spec-traits">
+          <span>Professional</span>
+          <span>Clean</span>
+          <span>Modern</span>
+          <span>Story-driven</span>
+          <span>Attention-grabbing</span>
+        </div>
+      </div>
+
+      <div class="spec-visual reveal">
+        <div class="timeline-mock glass">
+          <div class="timeline-row" data-label="V2"><div class="clip clip-a" style="width:30%"></div><div class="clip clip-b" style="width:22%;left:34%"></div><div class="clip clip-a" style="width:18%;left:60%"></div></div>
+          <div class="timeline-row" data-label="V1"><div class="clip clip-c" style="width:60%"></div><div class="clip clip-a" style="width:30%;left:64%"></div></div>
+          <div class="timeline-row" data-label="A1"><div class="clip clip-wave" style="width:94%"></div></div>
+          <div class="timeline-playhead"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO SECTION ============ -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 05 — Portfolio</span>
+      <h2 class="section-title">Selected Work</h2>
+    </div>
+
+    <div class="portfolio-filters reveal" id="portfolioFilters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="video">Video Editing</button>
+      <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+      <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+      <button class="filter-btn" data-filter="encoding">Encoding</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Video Editing -->
+      <div class="portfolio-item glass reveal" data-category="video">
+        <div class="portfolio-preview preview-video">
+          <img src="assets/images/portfolio-video-1.jpg" alt="Brand Launch Teaser thumbnail" loading="lazy" width="900" height="675">
+          <span class="preview-play">▶</span>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Video Editing</span>
+          <h3>Brand Launch Teaser</h3>
+          <p>A fast-paced 30-second teaser cut for a product launch campaign.</p>
+          <a href="assets/videos/portfolio-video-1.mp4" class="view-btn" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-item glass reveal" data-category="video">
+        <div class="portfolio-preview preview-video">
+          <img src="frontend/images/podcast thumbnail.png" alt="Podcast Highlight Reel thumbnail" loading="lazy" width="900" height="675">
+          <span class="preview-play">▶</span>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Video Editing</span>
+          <h3>Podcast Highlight Reel</h3>
+          <p>Vertical clips repurposed from a long-form podcast episode.</p>
+          <a href="frontend/videos/Sample 1 Short Form.mp4" class="view-btn" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Graphic Design -->
+      <div class="portfolio-item glass reveal" data-category="graphic">
+        <div class="portfolio-preview preview-graphic"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Graphic Design</span>
+          <h3>Brand Identity Set</h3>
+          <p>A cohesive visual identity system built for a growing startup.</p>
+          <a href="#" class="view-btn">View Project →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-item glass reveal" data-category="graphic">
+        <div class="portfolio-preview preview-graphic"></div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Graphic Design</span>
+          <h3>Social Ad Creatives</h3>
+          <p>A set of scroll-stopping static ads for a paid campaign.</p>
+          <a href="#" class="view-btn">View Project →</a>
+        </div>
+      </div>
+
+      <!-- UI/UX -->
+      <div class="portfolio-item glass reveal" data-category="uiux">
+        <div class="portfolio-preview preview-uiux">
+          <div class="mock-desktop"></div>
+          <div class="mock-mobile"></div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">UI/UX Design</span>
+          <h3>SaaS Dashboard Concept</h3>
+          <p>Desktop and mobile interface design for an analytics platform.</p>
+          <a href="#" class="view-btn">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Encoding -->
+      <div class="portfolio-item glass reveal" data-category="encoding">
+        <div class="portfolio-preview preview-encoding">
+          <div class="cert-frame">CERT</div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Encoding</span>
+          <h3>Multi-Platform Export Set</h3>
+          <p>Optimized encodes delivered across four platform specifications.</p>
+          <a href="#" class="view-btn">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="portfolio-item glass reveal" data-category="social">
+        <div class="portfolio-preview preview-social">
+          <div class="dash-bar" style="width:70%"></div>
+          <div class="dash-bar" style="width:45%"></div>
+          <div class="dash-bar" style="width:85%"></div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-cat">Social Media Management</span>
+          <h3>Monthly Content Calendar</h3>
+          <p>A full campaign dashboard planned and managed end-to-end.</p>
+          <a href="#" class="view-btn">View Project →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS SECTION ============ -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 06 — Skills</span>
+      <h2 class="section-title">Tools & Proficiency</h2>
+    </div>
+
+    <div class="skills-grid reveal">
+      <div class="skill-row" data-level="50"><span class="skill-name">Premiere Pro</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">50%</span></div>
+      <div class="skill-row" data-level="90"><span class="skill-name">CapCut</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">90%</span></div>
+      <div class="skill-row" data-level="76"><span class="skill-name">Photoshop</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">76%</span></div>
+      <div class="skill-row" data-level="90"><span class="skill-name">Canva</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">90%</span></div>
+      <div class="skill-row" data-level="78"><span class="skill-name">Microsoft Excel</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">78%</span></div>
+      <div class="skill-row" data-level="80"><span class="skill-name">Microsoft Word</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">80%</span></div>
+      <div class="skill-row" data-level="70"><span class="skill-name">Google Workspace</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">70%</span></div>
+      <div class="skill-row" data-level="68"><span class="skill-name">Social Media Strategy</span><div class="skill-bar"><div class="skill-fill"></div></div><span class="skill-pct">68%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WORK WITH ME ============ -->
+<section class="section" id="why-me">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 07 — Why Me</span>
+      <h2 class="section-title">Why Work With Me</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card glass reveal">
+        <div class="why-icon">◆</div>
+        <h3>Strategic Thinking</h3>
+        <p>Every asset is built around a goal, not just aesthetics.</p>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon">◆</div>
+        <h3>Professional Workflow</h3>
+        <p>Organized processes that keep every project on track.</p>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon">◆</div>
+        <h3>Fast Turnaround</h3>
+        <p>Efficient delivery without cutting corners on quality.</p>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon">◆</div>
+        <h3>Attention to Detail</h3>
+        <p>Every frame, pixel, and word is considered.</p>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon">◆</div>
+        <h3>Creative Solutions</h3>
+        <p>Fresh ideas tailored to each brand's unique challenge.</p>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon">◆</div>
+        <h3>Reliable Communication</h3>
+        <p>Clear, consistent updates from brief to final delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 08 — Testimonials</span>
+      <h2 class="section-title">Client Feedback</h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card glass reveal">
+        <p>"Jeszemuel has been a big help in creating and editing video content for Gen One 3P. He’s creative, easy to work with, and knows how to make our services look more professional through video. He takes feedback well and makes sure the final output is something we can confidently use for our business. I highly recommend him as a video editor."</p>
+        <div class="testimonial-author">
+          <div class="avatar-placeholder">L</div>
+          <div>
+            <span class="author-name">Engr. Leomar Manalo</span>
+            <span class="author-role">CEO, Gen One 3P Electrical Services</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card glass reveal">
+        <p>"Our short-form content finally feels intentional. Every clip is built with a clear hook and a clear point."</p>
+        <div class="testimonial-author">
+          <div class="avatar-placeholder">M</div>
+          <div>
+            <span class="author-name">Marco D.</span>
+            <span class="author-role">Content Creator</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card glass reveal">
+        <p>"Professional, communicative, and genuinely strategic. Jae thinks about the goal, not just the visuals."</p>
+        <div class="testimonial-author">
+          <div class="avatar-placeholder">S</div>
+          <div>
+            <span class="author-name">Sam K.</span>
+            <span class="author-role">CEO, SaaS Startup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD CV SECTION ============ -->
+<section class="section" id="resume">
+  <div class="container">
+    <div class="cv-card glass reveal">
+      <span class="section-eyebrow">Frame 09 — Resume</span>
+      <h2 class="section-title">Let's See the Full Resume</h2>
+      <p>Download my resume for a complete look at my experience, tools, and past work.</p>
+      <div class="cv-actions">
+        <a href="#" class="btn btn-primary ripple" download>Download CV</a>
+        <a href="#" class="btn btn-ghost ripple" target="_blank">View Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT SECTION ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Frame 10 — Contact</span>
+      <h2 class="section-title">Let's Work Together</h2>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form glass reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Name" required>
+            <span class="form-error" data-error-for="fullName"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="form-error" data-error-for="email"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name (optional)">
+          </div>
+          <div class="form-group">
+            <label for="projectType">Project Type</label>
+            <select id="projectType" name="projectType" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="video">Strategic Video Editing</option>
+              <option value="graphic">Graphic Design</option>
+              <option value="uiux">UI/UX Design</option>
+              <option value="encoding">Encoding</option>
+              <option value="social">Social Media Management</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="form-error" data-error-for="projectType"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Budget</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Select a range (optional)</option>
+            <option value="small">Under $500</option>
+            <option value="medium">$500 – $1,500</option>
+            <option value="large">$1,500 – $5,000</option>
+            <option value="enterprise">$5,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          <span class="form-error" data-error-for="message"></span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary ripple">Send Inquiry</button>
+          <a href="mailto:hello@jaemanalo.com" class="btn btn-ghost ripple">Email Me</a>
+        </div>
+
+        <div class="form-success" id="formSuccess">✓ Message sent — thank you! I'll get back to you shortly.</div>
+      </form>
+
+      <div class="contact-side reveal">
+        <div class="contact-card glass">
+          <h3>Direct Contact</h3>
+          <a href="mailto:hello@jaemanalo.com" class="contact-line">manalojesz@gmail.com</a>
+          <a class="contact-line">+63 927 488 4100</a>
+          <span class="contact-line">Based in the Philippines</span>
+          <span class="contact-line" id="contactTime">-- GMT+8</span>
+        </div>
+
+        <div class="socials-card glass">
+          <h3>Find Me Online</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/zemuel.manalo.1" class="social-link" aria-label="Facebook">Facebook</a>
+            <a href="https://www.linkedin.com/in/jae-manalo-7a79bb339/" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/hey.jaeeho/" class="social-link" aria-label="Instagram">Instagram</a>
+            <a href="https://github.com/akariiJaee" class="social-link" aria-label="GitHub">GitHub</a>
+            <a href="#" class="social-link" aria-label="TikTok">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer reveal">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">JM</span>
+      <div>
+        <span class="footer-name">Jeszemuel Manalo</span>
+        <span class="footer-nick">Jae</span>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <span>Based in the Philippines</span>
+      <span id="footerTime">--:--:-- GMT+8</span>
+    </div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Jeszemuel Manalo. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M9 4L4 9M9 4l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
