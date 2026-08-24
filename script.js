@@ -317,8 +317,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Base URL of your backend API. Swap this once your backend is deployed
+  // (e.g. Render/Railway URL). Keep it empty-string-checked so local
+  // testing on the same origin (e.g. server also serving the static site)
+  // still works with a relative path.
+  const CONTACT_API_URL = 'https://backend-0jh2.onrender.com/api/contact';
+
   if(contactForm){
     const fields = ['fullName','email','projectType','message'];
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const submitBtnDefaultText = submitBtn ? submitBtn.textContent : '';
 
     fields.forEach(name => {
       const input = document.getElementById(name);
@@ -335,7 +343,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    contactForm.addEventListener('submit', (e) => {
+    function setSubmitting(isSubmitting){
+      if(!submitBtn) return;
+      submitBtn.disabled = isSubmitting;
+      submitBtn.textContent = isSubmitting ? 'Sending...' : submitBtnDefaultText;
+    }
+
+    function showFormError(message){
+      let banner = document.getElementById('formErrorBanner');
+      if(!banner){
+        banner = document.createElement('div');
+        banner.id = 'formErrorBanner';
+        banner.className = 'form-error-banner';
+        contactForm.insertBefore(banner, formSuccess);
+      }
+      banner.textContent = message;
+      banner.classList.add('show');
+      setTimeout(() => banner.classList.remove('show'), 6000);
+    }
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       let isValid = true;
 
@@ -346,17 +373,49 @@ document.addEventListener('DOMContentLoaded', () => {
         if(error) isValid = false;
       });
 
-      if(isValid){
-        formSuccess.classList.add('show');
-        contactForm.reset();
-        document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
-        document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
-
-        setTimeout(() => formSuccess.classList.remove('show'), 6000);
-      } else {
+      if(!isValid){
         formSuccess.classList.remove('show');
         const firstInvalid = contactForm.querySelector('.invalid');
         if(firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      const payload = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company') ? document.getElementById('company').value : '',
+        projectType: document.getElementById('projectType').value,
+        budget: document.getElementById('budget') ? document.getElementById('budget').value : '',
+        message: document.getElementById('message').value,
+        website: document.getElementById('website') ? document.getElementById('website').value : '' // honeypot
+      };
+
+      setSubmitting(true);
+
+      try {
+        const response = await fetch(CONTACT_API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if(response.ok && data.ok){
+          formSuccess.classList.add('show');
+          contactForm.reset();
+          document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+          document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+          setTimeout(() => formSuccess.classList.remove('show'), 6000);
+        } else if(data.errors){
+          Object.entries(data.errors).forEach(([name, msg]) => showError(name, msg));
+        } else {
+          showFormError(data.error || 'Something went wrong. Please try again or email me directly.');
+        }
+      } catch (err) {
+        showFormError('Could not reach the server. Please check your connection or email me directly.');
+      } finally {
+        setSubmitting(false);
       }
     });
   }
