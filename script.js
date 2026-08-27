@@ -386,6 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
         company: document.getElementById('company') ? document.getElementById('company').value : '',
         projectType: document.getElementById('projectType').value,
         budget: document.getElementById('budget') ? document.getElementById('budget').value : '',
+        engagementType: document.getElementById('engagementType') ? document.getElementById('engagementType').value : '',
+        contractDuration: document.getElementById('contractDuration') ? document.getElementById('contractDuration').value : '',
         message: document.getElementById('message').value,
         website: document.getElementById('website') ? document.getElementById('website').value : '' // honeypot
       };
