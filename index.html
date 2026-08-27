@@ -620,14 +620,39 @@
         </div>
 
         <div class="form-group">
-          <label for="budget">Budget</label>
+          <label for="budget">Budget <span style="font-weight:400; opacity:.65;">(PHP — happy to quote in USD too, just mention it in your message)</span></label>
           <select id="budget" name="budget">
             <option value="" disabled selected>Select a range (optional)</option>
-            <option value="small">Under $500</option>
-            <option value="medium">$500 – $1,500</option>
-            <option value="large">$1,500 – $5,000</option>
-            <option value="enterprise">$5,000+</option>
+            <option value="starter">₱1,500 – ₱3,000 — Quick edits / short-form (Reels, TikTok, Shorts)</option>
+            <option value="standard">₱3,000 – ₱8,000 — Standard project (YouTube video, promo, vlog)</option>
+            <option value="premium">₱8,000 – ₱15,000 — Larger / multi-video project</option>
+            <option value="advanced">₱15,000 – ₱20,000 — Premium / branded / narrative project</option>
+            <option value="retainer">₱20,000+ per month — Regular / retainer basis</option>
           </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="engagementType">Engagement Type</label>
+            <select id="engagementType" name="engagementType">
+              <option value="" disabled selected>Select one (optional)</option>
+              <option value="project">Project-based (one-off)</option>
+              <option value="regular">Regular / ongoing hire</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contractDuration">Contract Duration</label>
+            <select id="contractDuration" name="contractDuration">
+              <option value="" disabled selected>Select one (optional)</option>
+              <option value="one_time">One-time delivery</option>
+              <option value="1_4_weeks">1–4 weeks</option>
+              <option value="1_month">1 month retainer</option>
+              <option value="3_months">3 months retainer</option>
+              <option value="6_months">6 months retainer</option>
+              <option value="ongoing">Ongoing / full-time regular</option>
+            </select>
+          </div>
         </div>
 
         <div class="form-group">
